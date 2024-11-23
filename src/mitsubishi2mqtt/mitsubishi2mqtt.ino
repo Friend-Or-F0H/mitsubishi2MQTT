@@ -1603,7 +1603,7 @@ void haConfig() {
   haConfig["unique_id"]                     = getId();
 
   JsonArray haConfigModes = haConfig.createNestedArray("modes");
-  haConfigModes.add("heat_cool"); //native AUTO mode
+  //haConfigModes.add("heat_cool"); //native AUTO mode. Removed to support my custom config
   haConfigModes.add("cool");
   haConfigModes.add("dry");
   if (supportHeatMode) {
