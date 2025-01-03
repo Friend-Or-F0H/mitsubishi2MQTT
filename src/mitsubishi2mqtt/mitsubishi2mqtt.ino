@@ -1387,7 +1387,7 @@ void hpStatusChanged(heatpumpStatus currentStatus) {
     String mqttOutput;
     serializeJson(rootInfo, mqttOutput);
 
-    if (!mqtt_client.publish_P(ha_state_topic.c_str(), mqttOutput.c_str(), false)) {
+    if (!mqtt_client.publish_P(ha_state_topic.c_str(), mqttOutput.c_str(), true)) {
       if (_debugModeLogs) mqtt_client.publish(ha_debug_logs_topic.c_str(), (char*)("Failed to publish hp status change"));
     }
 
